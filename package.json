@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack",
-    "server": "webpack serve"
+    "dev": "npm run watch & npm run start",
+    "start": "webpack serve ",
+    "watch": "webpack -w"
   },
   "keywords": [],
   "author": "Mikheil Mezurnishvili (rippera.san)",

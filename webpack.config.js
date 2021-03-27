@@ -24,13 +24,9 @@ files.forEach((file) => {
 module.exports = {
   mode: 'development',
   entry: {
-    // aos: './src/js/lib/aos.js',
-    // browsers: './src/js/lib/browsers.js',
-    // extends: './src/js/lib/_extends.js',
-    // scr: './src/js/lib/scr.js',
     app: './src/js/index.js',
   },
-  watch: true,
+  // watch: true,
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js',
@@ -69,7 +65,12 @@ module.exports = {
     minimize: true,
     minimizer: [new CssMinimizerPlugin()],
   },
-
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    open: true,
+  },
   plugins: [
     ...templates,
     new HtmlWebpackPugPlugin(),
